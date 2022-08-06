@@ -37,8 +37,9 @@ if (process.env.ENVIRONMENT === 'production') {
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log('Connected to database');
-    app.listen(5000, () => {
-        console.log('Listening at port 5000');
+    const port = process.env.PORT;
+    app.listen(port, () => {
+        console.log(`Listening at port ${port}`);
     })
 })
 .catch(() => {
