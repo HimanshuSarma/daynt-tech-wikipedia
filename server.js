@@ -24,7 +24,6 @@ app.use(AdminRoutes);
 app.use(SearchRoutes);
 app.use(AnalyticsRoutes);
 
-
 process.env.pwd = process.cwd();
 
 if (process.env.ENVIRONMENT === 'production') {
