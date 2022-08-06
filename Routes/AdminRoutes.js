@@ -9,7 +9,7 @@ const router = express.Router();
 
 const expiry = parseInt(process.env.JWT_EXPIRY);
 
-const count = 1;
+let count = 1;
 
 router.get("/admin-user/check-login", Auth, (req, res) => {
     res.status(200).json({expiresIn: expiry});
