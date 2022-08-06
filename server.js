@@ -7,9 +7,9 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const path = require('path');
 
-const AdminRoutes = require('./Routes/AdminRoutes');
-const SearchRoutes = require('./Routes/SearchRoutes');
-const AnalyticsRoutes = require('./Routes/AnalyticsRoutes');
+// const AdminRoutes = require('./Routes/AdminRoutes');
+// const SearchRoutes = require('./Routes/SearchRoutes');
+// const AnalyticsRoutes = require('./Routes/AnalyticsRoutes');
 
 const app = express();
 
@@ -49,6 +49,8 @@ const app = express();
 app.use('/', (req, res) => {
     res.send('Hii');
 })
+
+app.listen(process.env.PORT);
 
 
 
