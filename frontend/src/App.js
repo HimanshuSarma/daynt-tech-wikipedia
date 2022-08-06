@@ -32,7 +32,7 @@ function App() {
       }
       
       loginReqHandler();
-    }, (expiry - 5000));
+    }, (expiry - 60000));
 
     setLoginIntervalID(intervalID);
   }
