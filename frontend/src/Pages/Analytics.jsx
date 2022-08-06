@@ -92,7 +92,7 @@ const Analytics = ({isLoggedInState}) => {
           }
         </div>
 
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}} >
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'70%'}} >
             <h3>Trending searches: </h3>
             <div style={{display: 'flex', gap: '0.5rem'}}>
                 {searchTerms && searchTerms.map((currentSearchTerm, index) => {
