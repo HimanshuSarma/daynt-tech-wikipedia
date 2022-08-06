@@ -7,9 +7,9 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const path = require('path');
 
-const AdminRoutes = require('./Routes/AdminRoutes');
-const SearchRoutes = require('./Routes/SearchRoutes');
-const AnalyticsRoutes = require('./Routes/AnalyticsRoutes');
+// const AdminRoutes = require('./Routes/AdminRoutes');
+// const SearchRoutes = require('./Routes/SearchRoutes');
+// const AnalyticsRoutes = require('./Routes/AnalyticsRoutes');
 
 const app = express();
 
@@ -21,11 +21,11 @@ app.use(cors({
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(AdminRoutes);
-app.use(SearchRoutes);
-app.use(AnalyticsRoutes);
+// app.use(AdminRoutes);
+// app.use(SearchRoutes);
+// app.use(AnalyticsRoutes);
 
-process.env.pwd = process.cwd();
+// process.env.pwd = process.cwd();
 
 if (process.env.ENVIRONMENT === 'production') {
     // app.use(express.static(path.join(process.env.pwd, 'frontend', 'build')));
