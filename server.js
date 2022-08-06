@@ -13,12 +13,13 @@ const AnalyticsRoutes = require('./Routes/AnalyticsRoutes');
 
 const app = express();
 
-app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors({
     credentials: true,
     origin: true
 }));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cookieParser());
 
 app.use(AdminRoutes);
