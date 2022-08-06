@@ -92,9 +92,9 @@ const Analytics = ({isLoggedInState}) => {
           }
         </div>
 
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'70%'}} >
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'70%', margin: '0 auto'}} >
             <h3>Trending searches: </h3>
-            <div style={{display: 'flex', gap: '0.5rem'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem'}}>
                 {searchTerms && searchTerms.map((currentSearchTerm, index) => {
                     return (
                     <div key={index} className='stats-stocks-medicine-wrapper'>
