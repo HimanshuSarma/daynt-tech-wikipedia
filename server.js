@@ -18,6 +18,7 @@ app.use(cors({
     credentials: true,
     origin: true
 }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(AdminRoutes);
