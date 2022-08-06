@@ -8,6 +8,8 @@ import WikipediaPage from './Pages/WikipediaPage';
 import Analytics from './Pages/Analytics';
 import Login from './Pages/Login';
 
+import base_url from './appSetup';
+
 import './App.css';
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
     clearInterval(loginIntervalID);
     const intervalID = setInterval(() => {
       const loginReqHandler = async () => {
-        const loginReq = await fetch('http://localhost:5000/admin-user/refresh-token', {
+        const loginReq = await fetch(`${base_url}/admin-user/refresh-token`, {
           method: 'GET',
           credentials: 'include'
         });
@@ -43,7 +45,7 @@ function App() {
 
   useEffect(() => {
     const checkLogin = async () => {
-      const checkLoginReq = await fetch('http://localhost:5000/admin-user/check-login', {
+      const checkLoginReq = await fetch(`${base_url}/admin-user/check-login`, {
         method: 'GET',
         credentials: 'include'
       });

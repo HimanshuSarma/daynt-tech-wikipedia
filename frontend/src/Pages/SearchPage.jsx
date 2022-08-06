@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+import base_url from '../appSetup';
+
 import './SearchPage.css';
 
 const SearchPage = ({setSearchResults}) => {
@@ -11,7 +13,7 @@ const SearchPage = ({setSearchResults}) => {
       let searchHandlerReqData;
       const searchHandlerReq = new XMLHttpRequest();
 
-      searchHandlerReq.open('GET', `http://localhost:5000/search/${searchInput}`);
+      searchHandlerReq.open('GET', `${base_url}/search/${searchInput}`);
       searchHandlerReq.send();
 
       searchHandlerReq.onreadystatechange = () => {

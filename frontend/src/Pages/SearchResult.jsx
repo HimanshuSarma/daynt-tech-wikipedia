@@ -1,5 +1,7 @@
 import React from 'react';
 
+import base_url from '../appSetup';
+
 import './SearchResult.css';
 
 const SearchResult = ({searchResult, setWikipediaHTMLPage}) => {
@@ -13,7 +15,7 @@ const SearchResult = ({searchResult, setWikipediaHTMLPage}) => {
 
     const searchTitle = searchResult.title.replace(' ', '_');
 
-    searchResultReq.open('GET', `http://localhost:5000/read/${searchResult.pageid}/${searchTitle}`);
+    searchResultReq.open('GET', `${base_url}/read/${searchResult.pageid}/${searchTitle}`);
     searchResultReq.send();
 
     searchResultReq.onreadystatechange = () => {

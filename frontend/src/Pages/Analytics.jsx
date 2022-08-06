@@ -3,6 +3,8 @@ import {Bar} from 'react-chartjs-2';
 import {Chart, registerables} from 'chart.js'; 
 import moment from 'moment';
 
+import base_url from '../appSetup';
+
 import './Analytics.css';
 
 Chart.register(...registerables);
@@ -18,7 +20,7 @@ const Analytics = ({isLoggedInState}) => {
 
   useEffect(() => {
     const getSearchTerms = async () => {
-        const getSearchReq = await fetch(`http://localhost:5000/analytics/searchTerms/${searchTermSorting}`, {
+        const getSearchReq = await fetch(`${base_url}/analytics/searchTerms/${searchTermSorting}`, {
             method: 'GET',
             credentials: 'include'
         });

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import base_url from '../appSetup';
+
 const Login = ({setIsLoggedInState, loginSetIntervalHandler}) => {
   
   const [loginFormState, setLoginFormState] = useState({
@@ -13,7 +15,7 @@ const Login = ({setIsLoggedInState, loginSetIntervalHandler}) => {
   const loginFormSubmitHandler = async (e) => {
     e.preventDefault();
     if(loginFormState.username !== '' && loginFormState.password !== '') {
-        const loginReq = await fetch('http://localhost:5000/admin-user/login', {
+        const loginReq = await fetch(`${base_url}/admin-user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
