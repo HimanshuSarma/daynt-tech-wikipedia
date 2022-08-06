@@ -15,7 +15,7 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    origin: 'https://daynt-tech.herokuapp.com'
+    origin: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
