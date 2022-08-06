@@ -1,0 +1,13 @@
+.search-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    padding: 0.5rem 1rem;
+}
+
+.search-icon {
+    padding: 0.5rem 1rem;
+}
