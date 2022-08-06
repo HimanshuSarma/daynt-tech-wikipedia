@@ -9,6 +9,8 @@ const router = express.Router();
 
 const expiry = parseInt(process.env.JWT_EXPIRY);
 
+const count = 1;
+
 router.get("/admin-user/check-login", Auth, (req, res) => {
     res.status(200).json({expiresIn: expiry});
 });
@@ -17,13 +19,14 @@ router.get("/admin-user/refresh-token", Auth, async (req, res) => {
     const user = req.rootUser;
     const userInDB = await adminSchema.findById(user._id);
     const token = jwt.sign({_id: userInDB._id}, process.env.JWT_SECRET_KEY);
+    count += 1;
     res.cookie("jwt", token, {
         expires: new Date(Date.now() + expiry),
         maxAge: expiry,
         sameSite: 'strict',
         secure: true,
         httpOnly: true
-    }).status(200).json({ message: 'Login successfull', expiresIn: expiry });
+    }).status(200).json({ message: 'Login successfull', expiresIn: expiry, count });
 })
 
 router.post("/admin-user/login", async(req, res) => {
