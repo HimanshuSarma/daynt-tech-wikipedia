@@ -46,7 +46,7 @@ const app = express();
 //     console.log('Error occured')
 // })
 
-app.use((req, res) => {
+app.use('/', (req, res) => {
     res.send('Hii');
 })
 
